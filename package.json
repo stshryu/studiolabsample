@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "start.dev": "nodemon -L app.js",
+    "start": "node src/app.js",
+    "start.dev": "nodemon -L src/app.js",
     "test": "mocha --recursive",
     "test.watch": "mocha --recursive -w",
     "test.coverage": "nyc npm test"
@@ -28,7 +28,7 @@
     "nyc": "^15.1.0",
     "supertest": "^4.0.2"
   },
-  "main": "app.js",
+  "main": "src/app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stshryu/studiolabsample.git"
