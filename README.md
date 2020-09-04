@@ -16,3 +16,6 @@ By default compose runs using `start.dev` npm process which should use nodemon t
 
 ## Testing
 The npm startup script can be run using `npm run test`. If you want the tests to re-run on change you can instead use `npm run test.watch`. To get test coverage run `npm run test.coverage`.
+
+## Deploying
+`main.tf` exists as a terraform script that takes the contents of the docker container and pushes it to a specified AWS ECR instance. Future iterations should include a full task/service setup to automatically push to the repository, and create the node server.
