@@ -4,26 +4,17 @@
 require('dotenv').config();
 
 // Load dependencies
-const express = require('express');
-const bodyParser = require('body-parser');
-const accountRouter = require('./routes/accountRoutes');
 const logger = require('./services/utils/logger');
+const server = require('./server');
 
 // Configure server
 const port = process.env.SERVER_PORT;
 const host = process.env.SERVER_HOST;
 
-require('./services/utils/database');
+// Initialize server
+const app = server();
 
-const app = express();
-
-// Engine Setup
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Load Routes
-app.use('/accounts', accountRouter);
-
+// Start server
 app.listen(port, host, () => {
   logger.info(`Server listening on: http://${host}:${port}`);
 });
